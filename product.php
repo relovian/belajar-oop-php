@@ -20,8 +20,16 @@ class Product {
         
 }
 
-$product1 = new Product("Doraemon", "Fujiko F.Fujio", "Elec Media Komputindo", 100);
-$product2 = new Product("naruto", "masashi kishimoto", "shonen jump", 50);
+class CetakInfoLengkap {
+    public function cetakInfo( Product $produk) {
+        $str =  "{$produk->CetakLabel()} | penerbit : {$produk->penerbit}, stok : {$produk->stok} ";
+        return $str;
+    }
+
+}
+
+$product1 = new Product("Doraemon", "Fujiko F.Fujio", "Elex Media Kompution", 100);
+
 // $product1->judul = "Doraemon";
 // $product1->pengarang = "Fujiko F.Fujio";
 // $product1->penerbit = "Elex Media Komputindo";
@@ -35,7 +43,11 @@ $product2 = new Product("naruto", "masashi kishimoto", "shonen jump", 50);
 
 echo $product1->CetakLabel();
 echo "<br>";
-echo $product2->CetakLabel();
+// echo $product2->CetakLabel();
+
+$CetakInfo = new CetakInfoLengkap();
+echo $CetakInfo->cetakInfo($product1);
+
 
 // echo "<br>";
 
